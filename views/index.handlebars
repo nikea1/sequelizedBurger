@@ -1,0 +1,52 @@
+<div class="container">
+	
+		<img class="center-block" src="http://icons.iconarchive.com/icons/pixelkit/tasty-bites/512/hamburger-icon.png" alt="Picture of a burger">
+	
+		<h1 class = "text-center">HANBAAGAA O TABERU</h1>
+	
+	<form class="center-block"  action="burger/post" method="POST">
+		<label for="hamburger">hanbaga nyuuryoku</label>
+		<input type="text" name="hamburger">
+		<input type="submit">
+	</form>
+	<div class="row">
+		<div class="col-md-6">
+		<!-- Burgers to eat col -->
+		<h1 class = "text-center">Burgers to eat</h1>
+		<ul>
+			{{#each burgers}}
+				{{#unless this.devoured}}
+				<li>
+					<img src="http://icons.iconarchive.com/icons/pixelkit/tasty-bites/512/hamburger-icon.png" alt="Picture of a burger" height="64px" width="64px">
+					{{this.burger_name}}
+					<form action="burger/update/{{this.id}}?_method=PUT" method="POST">
+						<input type="hidden" name="devoured" value="true">
+						<button type="submit">TABERU</button>
+					</form>
+				</li>
+				{{/unless}}
+			{{/each}}
+		</ul>
+		</div>
+		<!-- end of col -->
+		
+		<div class="col-md-6">
+		<!-- Burgers eaten col -->
+		<h1 class = "text-center">Burgers eaten</h1>
+		<ul>
+			{{#each burgers}}
+				{{#if this.devoured}}
+				<li>
+					<img src="http://icons.iconarchive.com/icons/pixelkit/tasty-bites/512/hamburger-icon.png" alt="Picture of a burger" height="64px" width="64px">
+					{{this.burger_name}}
+					
+				</li>
+				{{/if}}
+			{{/each}}
+		</ul>
+		</div>
+		<!-- End of col -->
+
+	</div>
+	<!-- End of row -->
+</div>
