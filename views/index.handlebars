@@ -2,7 +2,7 @@
 	
 		<img class="center-block" src="http://icons.iconarchive.com/icons/pixelkit/tasty-bites/512/hamburger-icon.png" alt="Picture of a burger">
 	
-		<h1 class = "text-center">HANBAAGAA O TABERU</h1>
+		<h1 class = "text-center">HANBAAGAA-O-TABERU</h1>
 	
 	<form class="center-block"  action="burger/post" method="POST">
 		<label for="hamburger">hanbaga nyuuryoku</label>
@@ -18,7 +18,8 @@
 				{{#unless this.devoured}}
 				<li>
 					<img src="http://icons.iconarchive.com/icons/pixelkit/tasty-bites/512/hamburger-icon.png" alt="Picture of a burger" height="64px" width="64px">
-					{{this.burger_name}}
+					{{this.id}}.
+					{{this.burgerName}}
 					<form action="burger/update/{{this.id}}?_method=PUT" method="POST">
 						<input type="hidden" name="devoured" value="true">
 						<button type="submit">TABERU</button>
@@ -38,7 +39,8 @@
 				{{#if this.devoured}}
 				<li>
 					<img src="http://icons.iconarchive.com/icons/pixelkit/tasty-bites/512/hamburger-icon.png" alt="Picture of a burger" height="64px" width="64px">
-					{{this.burger_name}}
+					{{this.id}}.
+					{{this.burgerName}}
 					
 				</li>
 				{{/if}}
