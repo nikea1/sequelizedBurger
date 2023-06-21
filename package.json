@@ -28,6 +28,6 @@
     "express-handlebars": "^3.0.0",
     "method-override": "^2.3.6",
     "mysql": "^2.11.1",
-    "sequelize": "^4.17.2"
+    "sequelize": "^6.1.0"
   }
 }
